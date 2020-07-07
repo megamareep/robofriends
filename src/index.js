@@ -13,7 +13,9 @@ import 'tachyons'
 const logger = createLogger();
 //applyMiddleware ordered
 const rootReducer = combineReducers({searchRobots, requestRobots});
-//thunk middle ware looking for function returns. So it can listen for callbacks.
+//thunk middleware looking for function returns. So it can listen for callbacks.
+//store one single object that holds state for all components.
+//components no longer need to hold state.
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, logger));
 
 ReactDOM.render(

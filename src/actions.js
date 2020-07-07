@@ -5,11 +5,13 @@ import {
     REQUEST_ROBOTS_FAILED,
 } from './constants'
 
+//returns the object { type, payload}
 export const setSearchField = (text) => ({
     type: CHANGE_SEARCH_FIELD,
     payload: text
 })
 
+//returns function that gets picked up by thunk middleware.
 export const requestRobots = () => (dispatch) => {
     dispatch({ type: REQUEST_ROBOTS_PENDING });
     fetch('https://jsonplaceholder.typicode.com/users')
